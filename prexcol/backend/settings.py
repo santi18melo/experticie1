@@ -1,3 +1,6 @@
+import os   
+import sys
+import django
 from pathlib import Path
 from datetime import timedelta
 

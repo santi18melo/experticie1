@@ -17,7 +17,7 @@ router.register(r'usuarios', UsuarioViewSet, basename='usuario')
 # URLS
 # -------------------------------
 urlpatterns = [
-    path('', api_root, name='api-root'),
+    # path('', api_root, name='api-root'),  # Commented: conflicts with router root
     path('register/', register_user, name='register'),
     path('login/', login_user, name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),

@@ -9,8 +9,14 @@ import sys
 import django
 from pathlib import Path
 
+# Force UTF-8 output for Windows consoles
+if sys.platform == 'win32':
+    sys.stdout.reconfigure(encoding='utf-8')
+
 # Configurar Django
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings')
+current_dir = Path(__file__).resolve().parent
+sys.path.append(str(current_dir))
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
 django.setup()
 
 from django.core.management import call_command
